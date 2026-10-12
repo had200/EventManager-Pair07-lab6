@@ -39,6 +39,7 @@ def create_event(
     return db_event
 
 
+
 @router.get(
     "/",
     response_model=list[EventSchema]
@@ -51,6 +52,7 @@ def list_events(
     query = db.query(Event)
 
     if search:
+        search = search.strip()
         query = query.filter(
             Event.title.ilike(f"%{search}%")
         )
@@ -61,6 +63,8 @@ def list_events(
         )
 
     return query.order_by(Event.date).all()
+
+
 
 
 @router.get(
@@ -84,6 +88,7 @@ def get_event(
         )
 
     return event
+
 
 
 @router.put(
@@ -120,6 +125,7 @@ def update_event(
     db.refresh(event)
 
     return event
+
 
 
 @router.delete(
