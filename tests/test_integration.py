@@ -128,3 +128,17 @@ def test_register_nonexistent_event_returns_404(client):
 
     assert response.status_code == 404
     assert response.json()["detail"] == "Event not found."
+
+
+def test_cors_headers(client):
+    response = client.options(
+        "/events/",
+        headers={
+            "Origin": "http://localhost:3000",
+            "Access-Control-Request-Method": "GET"
+        }
+    )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == "http://localhost:3000"
+
