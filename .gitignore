@@ -13,3 +13,12 @@ events.db
 
 .vscode/
 .idea/
+# Lab 3 - coverage and mutation testing
+.coverage
+htmlcov/
+mutants/
+
+# Linux virtual environment
+.venv-linux/
+
+.idea/
