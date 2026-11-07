@@ -1,3 +1,4 @@
+
 name: Event Manager CI/CD Pipeline
 
 on:
@@ -23,6 +24,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Unit & Integration Tests
+        env:
+          PYTHONPATH: .
         run: pytest
 
   build-and-push-backend:
