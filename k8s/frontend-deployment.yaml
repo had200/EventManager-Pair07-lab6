@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: smaalisahar/eventmanager-frontend:latest
+          image: had200/eventmanager-frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
