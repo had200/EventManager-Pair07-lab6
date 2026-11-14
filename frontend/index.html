@@ -14,7 +14,7 @@
     <script>
         async function loadEvents() {
             try {
-                const res = await fetch('http://localhost:8000/events/');
+                const res = await fetch('/events/');
 
                 if (!res.ok) {
                     throw new Error('Failed to fetch events');
