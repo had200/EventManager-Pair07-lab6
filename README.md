@@ -274,3 +274,6 @@ The API can be explored interactively through Swagger UI:
 ```text
 http://127.0.0.1:8000/docs
 ```
+
+## Lab 6 : Kubernetes et déploiement continu
+Voir les dossiers k8s/ et .github/workflows/. Pipeline : test, build-and-push, puis deploy (runner self-hosted) sur le cluster Docker Desktop.
